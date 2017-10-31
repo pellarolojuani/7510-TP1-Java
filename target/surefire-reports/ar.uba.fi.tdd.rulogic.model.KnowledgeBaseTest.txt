@@ -1,4 +1,11 @@
 -------------------------------------------------------------------------------
 Test set: ar.uba.fi.tdd.rulogic.model.KnowledgeBaseTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.077 sec - in ar.uba.fi.tdd.rulogic.model.KnowledgeBaseTest
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.105 sec <<< FAILURE! - in ar.uba.fi.tdd.rulogic.model.KnowledgeBaseTest
+test(ar.uba.fi.tdd.rulogic.model.KnowledgeBaseTest)  Time elapsed: 0.047 sec  <<< FAILURE!
+java.lang.AssertionError: null
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at ar.uba.fi.tdd.rulogic.model.KnowledgeBaseTest.test(KnowledgeBaseTest.java:34)
+
