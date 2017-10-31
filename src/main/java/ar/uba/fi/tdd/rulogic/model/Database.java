@@ -16,7 +16,30 @@ public class Database {
         this.rules = new ArrayList<String>();
     }
     
-    
+    public String[] getNewFactsFromRule(String rule, String query) {
+        if (rule != null) {
+            String[] ruleParts = rule.split(":-");
+            String[] queryParam = getParamsFromFact(query);
+            String[] ruleParam = getParamsFromFact(ruleParts[0]);
+            String result = ruleParts[1];
+            for (int i = 0; i < ruleParam.length; i++) {
+                result = result.replaceAll(ruleParam[i], queryParam[ruleParam.indexOf(ruleParam[i])]);
+            }
+            List<String> result2 = new ArrayList<String>();
+            int newFactsCont = countFactsFromRule(result);
+            while (newFactsCont > 0) {
+                String aux = result.substring(0, result.indexOf(")") + 1);
+                result2.add(aux.replace(' ', ''));
+                result = result.substring(result.indexOf(")") + 2);
+                newFactsCont--;
+            }
+            return result2;
+        } else {
+            return [];
+        }
+        
+        return null;
+    }
     
     private boolean validateFactSyntax(String query) {
         boolean result = true;

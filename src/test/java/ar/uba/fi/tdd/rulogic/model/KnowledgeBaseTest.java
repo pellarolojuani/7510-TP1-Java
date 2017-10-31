@@ -20,8 +20,13 @@ public class KnowledgeBaseTest {
 	}
 
         @Test
-        public void countFactsFromRuleTest() {
+        public void countFactsFromRule1Test() {
             Assert.assertEquals(Integer.valueOf(this.database.countFactsFromRule("varon(roberto).")), Integer.valueOf(2));
+        }
+        
+        @Test
+        public void countFactsFromRule2Test() {
+            Assert.assertEquals(Integer.valueOf(this.database.countFactsFromRule("varon: roberto.")), Integer.valueOf(1));
         }
         
 	@Test
