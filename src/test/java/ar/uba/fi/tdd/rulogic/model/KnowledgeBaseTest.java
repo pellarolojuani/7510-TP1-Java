@@ -11,17 +11,21 @@ public class KnowledgeBaseTest {
 
 	@InjectMocks
 	private KnowledgeBase knowledgeBase;
+        private Database database;
 
 	@Before
 	public void setUp() throws Exception {
 		initMocks(this);
+                this.database = new Database();
 	}
 
+        @Test
+        public void countFactsFromRuleTest() {
+            Assert.assertEquals(Integer.valueOf(this.database.countFactsFromRule("varon(roberto).")), Integer.valueOf(2));
+        }
+        
 	@Test
 	public void test() {
-
 		Assert.assertTrue(this.knowledgeBase.answer("varon (javier)."));
-
 	}
-
 }
