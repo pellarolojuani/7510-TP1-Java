@@ -50,6 +50,7 @@ public class KnowledgeBase {
     public boolean answer(String query) {
         query = query.replaceAll("\t", "");
         query = query.replaceAll(" ", "");
+        query = query.replaceAll("\\.", "");
         return evaluateQuerycore(query);
     }
 

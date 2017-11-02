@@ -32,7 +32,9 @@ public class Database {
             while (newFactsCont > 0) {
                 String aux = result.substring(0, result.indexOf(")") + 1);
                 result2.add(aux.replaceAll(" ", ""));
-                result = result.substring(result.indexOf(")") + 2);
+                if (newFactsCont != 1) {
+                    result = result.substring(result.indexOf(")") + 2);
+                }
                 newFactsCont--;
             }
             return result2;
@@ -89,7 +91,13 @@ public class Database {
     }
 
     public int countFactsFromRule(String ruleFacts) {
-        return ruleFacts.split("\\(").length;
+        int counter = 0;
+        for (int i = 0; i < ruleFacts.length(); i++) {
+            if (ruleFacts.charAt(i) == '(') {
+                counter++;
+            }
+        }
+        return counter;
     }
 
     public String getRuleByName(String name) {
@@ -158,7 +166,10 @@ public class Database {
         this.rules.add(rule);
     }
 
-    private String getRuleNameFromQuery(String query) {
-        return query.substring(0, query.indexOf("("));
+    public String getRuleNameFromQuery(String query) {
+        if (query.indexOf("(") != -1) {
+            return query.substring(0, query.indexOf("("));
+        }
+        return "";
     }
 }
