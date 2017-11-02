@@ -113,13 +113,13 @@ public class Database {
     }
 
     public String[] getParamsFromFact(String query) {
-        String subquery = query.substring(query.indexOf("(" + 1, query.indexOf(")")));
+        String subquery = query.substring(query.indexOf("(") + 1, query.indexOf(")"));
         return subquery.split(",");
     }
 
     private void addQuery(String query) {
         query = query.trim().replace(".", "");
-        if (query.contains(":-")) {
+        if (!query.contains(":-")) {
             this.setFact(query.replaceAll(" ", ""));
         } else {
             this.setRule(query.replaceAll(" ", ""));

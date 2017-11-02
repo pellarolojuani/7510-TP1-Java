@@ -12,6 +12,6 @@ public class App
 	public static void main(String[] args) throws IOException {
             KnowledgeBase base = new KnowledgeBase();
             base.parseDatabase();
-            base.answer("varon (javier).");
+            base.answer("varon (juan)");
     }
 }

@@ -10,7 +10,7 @@ import java.util.List;
 public class KnowledgeBase {
 
     private Database database = new Database();
-
+    
     public boolean evaluateQuerycore(String query) {
         boolean result = false;
         if (database.getFacts().size() != 0) {
