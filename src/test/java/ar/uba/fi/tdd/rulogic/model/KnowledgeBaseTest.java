@@ -67,6 +67,8 @@ public class KnowledgeBaseTest {
     
     @Test
     public void parseDatabaseTest() throws IOException {
+        knowledgeBase.getDatabase().getFacts().clear();
+        knowledgeBase.getDatabase().getRules().clear();
         knowledgeBase.parseDatabase();
         Assert.assertEquals(knowledgeBase.getDatabase().getFacts().size() + knowledgeBase.getDatabase().getRules().size(), 19);
         Assert.assertEquals(knowledgeBase.getDatabase().getFacts().size(), 15);
