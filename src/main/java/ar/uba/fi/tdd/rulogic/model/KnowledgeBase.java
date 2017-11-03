@@ -10,6 +10,14 @@ import java.util.List;
 public class KnowledgeBase {
 
     private Database database = new Database();
+
+    public Database getDatabase() {
+        return database;
+    }
+
+    public void setDatabase(Database database) {
+        this.database = database;
+    }
     
     public boolean evaluateQuerycore(String query) {
         boolean result = false;

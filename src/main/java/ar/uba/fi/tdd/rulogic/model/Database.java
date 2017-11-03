@@ -121,6 +121,7 @@ public class Database {
     }
 
     public String[] getParamsFromFact(String query) {
+        query = query.replaceAll(" ", "");
         String subquery = query.substring(query.indexOf("(") + 1, query.indexOf(")"));
         return subquery.split(",");
     }

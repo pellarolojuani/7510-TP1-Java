@@ -1,4 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: ar.uba.fi.tdd.rulogic.model.KnowledgeBaseTest
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.185 sec - in ar.uba.fi.tdd.rulogic.model.KnowledgeBaseTest
+Tests run: 10, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.084 sec <<< FAILURE! - in ar.uba.fi.tdd.rulogic.model.KnowledgeBaseTest
+parseDatabaseTest(ar.uba.fi.tdd.rulogic.model.KnowledgeBaseTest)  Time elapsed: 0.004 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<38> but was:<19>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at ar.uba.fi.tdd.rulogic.model.KnowledgeBaseTest.parseDatabaseTest(KnowledgeBaseTest.java:71)
+
