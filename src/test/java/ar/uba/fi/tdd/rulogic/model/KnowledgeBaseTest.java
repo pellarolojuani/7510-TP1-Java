@@ -74,6 +74,11 @@ public class KnowledgeBaseTest {
         Assert.assertEquals(knowledgeBase.getDatabase().getFacts().size(), 15);
         Assert.assertEquals(knowledgeBase.getDatabase().getRules().size(), 4);
     }
+    
+    @Test
+    public void matchFactsTest() {
+        
+    }
 
     // Tests de aceptacion
     @Test
